@@ -125,6 +125,7 @@ public class ShiftReduceParserQuery implements ParserQuery  {
           Transition transition = parser.model.findEmergencyTransition(state, constraints);
           if (transition != null) {
             State newState = transition.apply(state);
+            System.err.println(newState);
             if (bestState == null || bestState.score() < newState.score()) {
               bestState = newState;
             }
